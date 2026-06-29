@@ -41,8 +41,8 @@ export default function Hero() {
 
       <div style={{ position: 'relative', zIndex: 10, maxWidth: 1280, margin: '0 auto', padding: '128px 24px 80px', width: '100%' }}>
         {/* mission briefing badge */}
-        <BracketFrame className="inline-flex items-center gap-3" style={{ padding: '6px 12px', background: 'rgba(22,21,28,.6)', marginBottom: 40 }}>
-          <div style={{ display: 'inline-flex', alignItems: 'center', gap: 12, padding: '6px 12px', background: 'rgba(22,21,28,.6)' }}>
+        <BracketFrame className="inline-flex items-center gap-3" style={{ marginBottom: 48 }}>
+          <div style={{ display: 'inline-flex', alignItems: 'center', gap: 12, padding: '8px 16px', background: 'rgba(22,21,28,.6)' }}>
             <PingDot />
             <span style={{ fontFamily: '"JetBrains Mono",monospace', fontSize: 10, letterSpacing: '.3em', color: '#a855f7', textTransform: 'uppercase' }}>mission_briefing // 001</span>
             <span style={{ fontFamily: '"JetBrains Mono",monospace', fontSize: 10, letterSpacing: '.3em', color: 'rgba(239,236,229,.45)', textTransform: 'uppercase' }}>— subject: omar_faruk</span>
@@ -70,12 +70,14 @@ export default function Hero() {
 
             {/* Name */}
             <h1 style={{ fontFamily: 'Fraunces,serif', fontVariationSettings: '"opsz" 144,"SOFT" 30', letterSpacing: '-.03em', color: '#efece5', margin: '0 0 32px', fontSize: 'clamp(3.2rem,12vw,11rem)', lineHeight: .88 }}>
-              <span style={{ display: 'block' }}>
+              <span style={{ display: 'block', fontStyle: 'italic' }}>
                 <GlitchText text="Omar" baseDelay={0.3} step={0.04} />
               </span>
               <span style={{ display: 'block' }}>
                 <span className="inline-block animate-glitch" style={{ color: 'rgba(239,236,229,.4)', animationDelay: '.70s', animationFillMode: 'both' }}>/</span>
-                <GlitchText text="Faruk" baseDelay={0.8} step={0.04} className="text-signal" />
+                <span style={{ color: '#a855f7' }}>
+                  <GlitchText text="Faruk" baseDelay={0.8} step={0.04} />
+                </span>
                 <span className="animate-blink inline-block align-middle bg-signal" style={{ width: '0.06em', minWidth: 12, height: '0.82em', marginLeft: 12 }} />
               </span>
             </h1>

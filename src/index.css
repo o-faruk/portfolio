@@ -17,3 +17,13 @@ button { font-family: inherit; }
 ::-webkit-scrollbar-thumb { background: rgba(168,85,247,.35); border-radius: 3px; }
 ::-webkit-scrollbar-thumb:hover { background: rgba(168,85,247,.6); }
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; } }
+
+/* Ensure desktop sticky projects section is hidden on mobile */
+.projects-desktop-wrapper {
+  display: none;
+}
+@media (min-width: 1024px) {
+  .projects-desktop-wrapper {
+    display: block;
+  }
+}

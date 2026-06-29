@@ -116,7 +116,7 @@ export default function Projects() {
       </div>
 
       {/* Desktop sticky dossier */}
-      <div ref={wrapRef} className="hidden lg:block" style={{ position: 'relative', height: `${(PROJECTS.length + 1) * 100}vh` }}>
+      <div ref={wrapRef} className="projects-desktop-wrapper" style={{ position: 'relative', height: `${(PROJECTS.length + 1) * 100}vh` }}>
         <div style={{ position: 'sticky', top: 0, height: '100vh', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', overflow: 'hidden' }}>
 
           {/* Top bar */}

@@ -57,5 +57,6 @@ export default {
       },
     },
   },
+  safelist: ['hidden', 'lg:block'],
   plugins: [],
 }
