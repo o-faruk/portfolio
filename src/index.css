@@ -20,10 +20,10 @@ button { font-family: inherit; }
 
 /* Ensure desktop sticky projects section is hidden on mobile */
 .projects-desktop-wrapper {
-  display: none;
+  display: none !important;
 }
 @media (min-width: 1024px) {
   .projects-desktop-wrapper {
-    display: block;
+    display: block !important;
   }
 }

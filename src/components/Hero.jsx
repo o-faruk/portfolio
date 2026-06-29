@@ -41,7 +41,7 @@ export default function Hero() {
 
       <div style={{ position: 'relative', zIndex: 10, maxWidth: 1280, margin: '0 auto', padding: '128px 24px 80px', width: '100%' }}>
         {/* mission briefing badge */}
-        <BracketFrame className="inline-flex items-center gap-3" style={{ marginBottom: 48 }}>
+        <BracketFrame className="inline-flex items-center gap-3" style={{ marginBottom: 64 }}>
           <div style={{ display: 'inline-flex', alignItems: 'center', gap: 12, padding: '8px 16px', background: 'rgba(22,21,28,.6)' }}>
             <PingDot />
             <span style={{ fontFamily: '"JetBrains Mono",monospace', fontSize: 10, letterSpacing: '.3em', color: '#a855f7', textTransform: 'uppercase' }}>mission_briefing // 001</span>
@@ -53,7 +53,7 @@ export default function Hero() {
           {/* Left column */}
           <div style={{ flex: '1 1 540px', minWidth: 300 }}>
             {/* Status badges */}
-            <div style={{ display: 'flex', flexDirection: 'column', gap: 8, marginBottom: 40, maxWidth: 560 }}>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: 16, marginBottom: 40, maxWidth: 560 }}>
               <BracketFrame style={{ display: 'flex', alignItems: 'center', gap: 12, padding: '8px 12px', background: 'rgba(22,21,28,.4)' }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: 12, padding: '8px 12px', background: 'rgba(22,21,28,.4)', width: '100%' }}>
                   <PingDot size={8} />
@@ -61,11 +61,13 @@ export default function Hero() {
                   <span style={{ fontFamily: '"JetBrains Mono",monospace', fontSize: 12, color: 'rgba(239,236,229,.85)' }}>Building agents · going down rabbit holes</span>
                 </div>
               </BracketFrame>
-              <div style={{ display: 'flex', alignItems: 'center', gap: 12, padding: '8px 12px', background: 'rgba(22,21,28,.4)' }}>
-                <span style={{ width: 8, height: 8, borderRadius: '50%', background: 'rgba(239,236,229,.4)' }} />
-                <span style={{ fontFamily: '"JetBrains Mono",monospace', fontSize: 10, letterSpacing: '.24em', textTransform: 'uppercase', fontWeight: 500, color: 'rgba(239,236,229,.5)' }}>studying</span>
-                <span style={{ fontFamily: '"JetBrains Mono",monospace', fontSize: 12, color: 'rgba(239,236,229,.6)' }}>CS · AI/ML · UConn · Class of '28</span>
-              </div>
+              <BracketFrame style={{ display: 'flex', alignItems: 'center', gap: 12, padding: '8px 12px', background: 'rgba(22,21,28,.4)' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: 12, padding: '8px 12px', background: 'rgba(22,21,28,.4)', width: '100%' }}>
+                  <span style={{ width: 8, height: 8, borderRadius: '50%', background: 'rgba(239,236,229,.4)', flexShrink: 0 }} />
+                  <span style={{ fontFamily: '"JetBrains Mono",monospace', fontSize: 10, letterSpacing: '.24em', textTransform: 'uppercase', fontWeight: 500, color: 'rgba(239,236,229,.5)' }}>studying</span>
+                  <span style={{ fontFamily: '"JetBrains Mono",monospace', fontSize: 12, color: 'rgba(239,236,229,.6)' }}>CS · AI/ML · UConn · Class of '28</span>
+                </div>
+              </BracketFrame>
             </div>
 
             {/* Name */}
