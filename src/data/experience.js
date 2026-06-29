@@ -1,0 +1,28 @@
+export const EXPERIENCES = [
+  {
+    num: '01',
+    kind: 'Work',
+    company: 'AI YouTube Channel',
+    title: 'Creator',
+    period: '2025 — Present',
+    location: 'Online',
+    description: 'Creating videos on AI/ML — building agents in public, breaking down how models actually work, and documenting the rabbit holes I fall into along the way.',
+    listLabel: 'Focus',
+    skills: ['AI/ML', 'Agents', 'Video', 'Storytelling', 'Editing'],
+    badge: 'Active',
+    isWork: true,
+  },
+  {
+    num: '02',
+    kind: 'Education',
+    company: 'University of Connecticut',
+    title: 'B.S. Computer Science · AI/ML',
+    period: '2024 — 2028',
+    location: 'Hartford, CT',
+    description: "Studying Computer Science with a focus on AI/ML. Building projects on the side and chasing the parts of the field that won't let me put them down.",
+    listLabel: 'Coursework',
+    skills: ['Data Structures', 'Algorithms', 'Machine Learning', 'Systems'],
+    badge: 'Current',
+    isWork: false,
+  },
+]
