@@ -14,8 +14,8 @@ export default function Footer() {
           </div>
         </div>
         <div style={{ display: 'flex', alignItems: 'center', gap: 24, fontFamily: '"JetBrains Mono",monospace', fontSize: 11, letterSpacing: '.22em', textTransform: 'uppercase' }}>
-          {[['github','#'],['linkedin','#'],['contact','mailto:omar@faruk.dev']].map(([label, href]) => (
-            <a key={label} href={href} style={{ color: 'rgba(239,236,229,.55)', textDecoration: 'none', transition: 'color .2s' }}
+          {[['github','https://github.com/o-faruk'],['linkedin','https://www.linkedin.com/in/omar-faruko/'],['contact','mailto:omarfarukk108@gmail.com']].map(([label, href]) => (
+            <a key={label} href={href} target={href.startsWith('mailto') ? undefined : '_blank'} rel="noopener noreferrer" style={{ color: 'rgba(239,236,229,.55)', textDecoration: 'none', transition: 'color .2s' }}
               onMouseEnter={e => e.currentTarget.style.color='#efece5'}
               onMouseLeave={e => e.currentTarget.style.color='rgba(239,236,229,.55)'}>
               {label}

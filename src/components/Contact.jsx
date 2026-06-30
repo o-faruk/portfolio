@@ -1,5 +1,16 @@
 import { motion } from 'framer-motion'
 
+const GHIcon = () => (
+  <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16" aria-hidden>
+    <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/>
+  </svg>
+)
+const LIIcon = () => (
+  <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16" aria-hidden>
+    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+  </svg>
+)
+
 function PingDot({ size = 6 }) {
   return (
     <span className="relative inline-flex" style={{ width: size, height: size }}>
@@ -39,8 +50,8 @@ export default function Contact() {
             <div style={{ fontFamily: '"JetBrains Mono",monospace', fontSize: 10, letterSpacing: '.32em', textTransform: 'uppercase', color: 'rgba(168,85,247,.7)', marginBottom: 24 }}>// mail_channels</div>
             <div style={{ display: 'flex', flexDirection: 'column', gap: 18 }}>
               {[
-                { label: 'primary', email: 'omar@faruk.dev', active: true },
-                { label: 'school',  email: 'faruk.o@uconn.edu', active: false },
+                { label: 'primary', email: 'omarfarukk108@gmail.com', active: true },
+                { label: 'school',  email: 'omar.faruk@uconn.edu', active: false },
               ].map(({ label, email, active }) => (
                 <div key={label} style={{ display: 'flex', flexDirection: 'column', gap: 4 }}>
                   <span style={{ fontFamily: '"JetBrains Mono",monospace', fontSize: 10, letterSpacing: '.22em', textTransform: 'uppercase', color: active ? '#a855f7' : 'rgba(239,236,229,.55)', display: 'flex', alignItems: 'center', gap: 8 }}>
@@ -63,20 +74,20 @@ export default function Contact() {
             <div style={{ fontFamily: '"JetBrains Mono",monospace', fontSize: 10, letterSpacing: '.32em', textTransform: 'uppercase', color: 'rgba(168,85,247,.7)', marginBottom: 24 }}>// presence_nodes</div>
             <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
               {[
-                { icon: '</>', label: 'GitHub',   href: '#' },
-                { icon: 'in',  label: 'LinkedIn', href: '#' },
+                { icon: <GHIcon />, label: 'GitHub',   href: 'https://github.com/o-faruk' },
+                { icon: <LIIcon />, label: 'LinkedIn', href: 'https://www.linkedin.com/in/omar-faruko/' },
               ].map(({ icon, label, href }) => (
-                <a key={label} href={href} style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '12px 16px', border: '1px solid rgba(168,85,247,.25)', textDecoration: 'none', transition: 'border-color .2s,background .2s' }}
+                <a key={label} href={href} target="_blank" rel="noopener noreferrer" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '12px 16px', border: '1px solid rgba(168,85,247,.25)', textDecoration: 'none', transition: 'border-color .2s,background .2s' }}
                   onMouseEnter={e => { e.currentTarget.style.borderColor='#a855f7'; e.currentTarget.style.background='rgba(168,85,247,.05)' }}
                   onMouseLeave={e => { e.currentTarget.style.borderColor='rgba(168,85,247,.25)'; e.currentTarget.style.background='transparent' }}>
                   <span style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
-                    <span style={{ fontFamily: '"JetBrains Mono",monospace', color: '#a855f7' }}>{icon}</span>
+                    <span style={{ color: '#a855f7', display: 'flex', alignItems: 'center' }}>{icon}</span>
                     <span style={{ fontFamily: '"JetBrains Mono",monospace', fontSize: 13, letterSpacing: '.2em', textTransform: 'uppercase', color: '#efece5' }}>{label}</span>
                   </span>
                   <span style={{ color: 'rgba(239,236,229,.4)' }}>→</span>
                 </a>
               ))}
-              <a href="mailto:omar@faruk.dev" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '12px 16px', border: '2px solid #a855f7', background: '#a855f7', color: '#0e0d14', textDecoration: 'none', transition: 'background .2s,color .2s' }}
+              <a href="mailto:omarfarukk108@gmail.com" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '12px 16px', border: '2px solid #a855f7', background: '#a855f7', color: '#0e0d14', textDecoration: 'none', transition: 'background .2s,color .2s' }}
                 onMouseEnter={e => { e.currentTarget.style.background='transparent'; e.currentTarget.style.color='#a855f7' }}
                 onMouseLeave={e => { e.currentTarget.style.background='#a855f7'; e.currentTarget.style.color='#0e0d14' }}>
                 <span style={{ fontFamily: '"JetBrains Mono",monospace', fontSize: 13, letterSpacing: '.2em', textTransform: 'uppercase', fontWeight: 700 }}>▶ send_a_message</span>

@@ -12,34 +12,30 @@ export default function MatrixRain() {
     let cols, drops, speeds, raf, last = 0
 
     function setup() {
-      canvas.width = window.innerWidth
-      canvas.height = window.innerHeight
-      cols = Math.ceil(canvas.width / FS)
+      const scale = 0.7
+      canvas.width = Math.ceil(window.innerWidth * scale)
+      canvas.height = Math.ceil(window.innerHeight * scale)
+      ctx.scale(scale, scale)
+      cols = Math.ceil(window.innerWidth / FS)
       drops = Array.from({ length: cols }, () => Math.random() * -50)
       speeds = Array.from({ length: cols }, () => 0.4 + Math.random() * 0.55)
+      ctx.font = `${FS}px "JetBrains Mono",monospace`
+      ctx.textBaseline = 'top'
     }
 
     function draw(t) {
       raf = requestAnimationFrame(draw)
-      if (t - last < 33) return
+      if (t - last < 50) return
       last = t
       ctx.fillStyle = 'rgba(8,7,13,0.09)'
       ctx.fillRect(0, 0, canvas.width, canvas.height)
-      ctx.font = `${FS}px "JetBrains Mono",monospace`
-      ctx.textBaseline = 'top'
       for (let i = 0; i < cols; i++) {
         const ch = CHARS[(Math.random() * CHARS.length) | 0]
         const x = i * FS, y = drops[i] * FS
-        const base = Math.random() < 0.78 ? '168,85,247' : '192,132,252'
         const a = 0.1 + Math.random() * 0.85
-        if (a > 0.82) {
-          ctx.shadowBlur = 10
-          ctx.shadowColor = `rgba(${base},0.85)`
-          ctx.fillStyle = `rgba(239,236,229,${Math.min(1, a)})`
-        } else {
-          ctx.shadowBlur = 0
-          ctx.fillStyle = `rgba(${base},${a})`
-        }
+        ctx.fillStyle = Math.random() < 0.78
+          ? `rgba(168,85,247,${a})`
+          : `rgba(192,132,252,${a})`
         ctx.fillText(ch, x, y)
         drops[i] += speeds[i]
         if (y > canvas.height && Math.random() > 0.975) {
@@ -47,7 +43,6 @@ export default function MatrixRain() {
           speeds[i] = 0.4 + Math.random() * 0.55
         }
       }
-      ctx.shadowBlur = 0
     }
 
     setup()
@@ -60,7 +55,7 @@ export default function MatrixRain() {
   return (
     <canvas
       ref={ref}
-      style={{ position: 'fixed', inset: 0, zIndex: 0, width: '100vw', height: '100vh', display: 'block', pointerEvents: 'none' }}
+      style={{ position: 'fixed', inset: 0, zIndex: 0, width: '100vw', height: '100vh', display: 'block', pointerEvents: 'none', willChange: 'transform' }}
     />
   )
 }
