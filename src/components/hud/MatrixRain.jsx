@@ -12,26 +12,28 @@ export default function MatrixRain() {
     let cols, drops, speeds, raf, last = 0
 
     function setup() {
-      const scale = 0.7
-      canvas.width = Math.ceil(window.innerWidth * scale)
-      canvas.height = Math.ceil(window.innerHeight * scale)
-      ctx.scale(scale, scale)
-      cols = Math.ceil(window.innerWidth / FS)
+      // Cap at 1× DPR — halves pixel count on retina without visual distortion
+      const dpr = Math.min(window.devicePixelRatio || 1, 1)
+      canvas.width = Math.ceil(window.innerWidth * dpr)
+      canvas.height = Math.ceil(window.innerHeight * dpr)
+      const scaledFS = Math.round(FS * dpr)
+      cols = Math.ceil(canvas.width / scaledFS)
       drops = Array.from({ length: cols }, () => Math.random() * -50)
       speeds = Array.from({ length: cols }, () => 0.4 + Math.random() * 0.55)
-      ctx.font = `${FS}px "JetBrains Mono",monospace`
+      ctx.font = `${scaledFS}px "JetBrains Mono",monospace`
       ctx.textBaseline = 'top'
     }
 
     function draw(t) {
       raf = requestAnimationFrame(draw)
-      if (t - last < 50) return
+      if (t - last < 55) return
       last = t
+      const scaledFS = Math.round(FS * Math.min(window.devicePixelRatio || 1, 1))
       ctx.fillStyle = 'rgba(8,7,13,0.09)'
       ctx.fillRect(0, 0, canvas.width, canvas.height)
       for (let i = 0; i < cols; i++) {
         const ch = CHARS[(Math.random() * CHARS.length) | 0]
-        const x = i * FS, y = drops[i] * FS
+        const x = i * scaledFS, y = drops[i] * scaledFS
         const a = 0.1 + Math.random() * 0.85
         ctx.fillStyle = Math.random() < 0.78
           ? `rgba(168,85,247,${a})`
