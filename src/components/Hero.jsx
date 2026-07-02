@@ -69,9 +69,9 @@ export default function Hero() {
       {/* diagonal rule */}
       <div style={{ position: 'absolute', top: '26%', left: '-50%', width: '220%', height: 1, background: 'linear-gradient(90deg,transparent,rgba(168,85,247,.5) 40%,rgba(168,85,247,.5) 60%,transparent)', transform: 'rotate(-23deg)', opacity: .22, pointerEvents: 'none' }} />
 
-      <div style={{ position: 'relative', zIndex: 10, maxWidth: 1280, margin: '0 auto', padding: '80px 24px 60px', width: '100%' }}>
+      <div style={{ position: 'relative', zIndex: 10, maxWidth: 1280, margin: '0 auto', padding: 'clamp(80px,14vh,180px) 24px clamp(60px,10vh,120px)', width: '100%' }}>
       {/* mission briefing badge */}
-        <div style={{ marginBottom: 13 }}>
+        <div style={{ marginBottom: 'clamp(13px,2vh,32px)' }}>
           <BracketFrame className="inline-flex">
             <div style={{ display: 'inline-flex', alignItems: 'center', gap: 12, padding: '8px 16px', background: 'rgba(22,21,28,.6)' }}>
               <PulseDot />
@@ -86,7 +86,7 @@ export default function Hero() {
           <div style={{ flex: '1 1 540px', minWidth: 300 }}>
             {/* Status badges */}
             {/* Note the addition of alignItems: 'flex-start' here! */}
-            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: 12, marginBottom: 32, maxWidth: 560 }}>
+            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: 'clamp(10px,1.6vh,20px)', marginBottom: 'clamp(28px,5vh,56px)', maxWidth: 560 }}>
               <BracketFrame className="inline-flex">
                 <div style={{ display: 'inline-flex', alignItems: 'center', gap: 12, padding: '8px 16px', background: 'rgba(22,21,28,.4)' }}>
                   <PulseDot />
@@ -104,7 +104,7 @@ export default function Hero() {
             </div>
 
             {/* Name */}
-            <h1 style={{ fontFamily: 'Fraunces,serif', fontVariationSettings: '"opsz" 144,"SOFT" 30', letterSpacing: '-.03em', color: '#efece5', margin: '0 0 24px', fontSize: 'clamp(3.2rem,10vw,8rem)', lineHeight: .88 }}>
+            <h1 style={{ fontFamily: 'Fraunces,serif', fontVariationSettings: '"opsz" 144,"SOFT" 30', letterSpacing: '-.03em', color: '#efece5', margin: '0 0 clamp(20px,3.5vh,44px)', fontSize: 'clamp(3.2rem,9vw + 2vh,9.5rem)', lineHeight: .88 }}>
               <span style={{ display: 'block', fontStyle: 'italic' }}>
                 <GlitchText text="Omar" baseDelay={0.3} step={0.04} />
               </span>
@@ -120,16 +120,16 @@ export default function Hero() {
             </h1>
 
             {/* Subtitle */}
-            <p style={{ fontFamily: '"JetBrains Mono",monospace', fontSize: 'clamp(13px,1.2vw,15px)', color: 'rgba(239,236,229,.72)', maxWidth: 640, margin: '0 0 8px' }}>
+            <p style={{ fontFamily: '"JetBrains Mono",monospace', fontSize: 'clamp(13px,1.2vw,16px)', color: 'rgba(239,236,229,.72)', maxWidth: 640, margin: '0 0 10px' }}>
               <span style={{ color: '#a855f7' }}>›</span> <span style={{ color: '#efece5' }}>omar@faruk:~$</span> {subtitle}
               <span className="animate-blink inline-block align-middle bg-bone" style={{ width: 10, height: 16, marginLeft: 3 }} />
             </p>
-            <p style={{ fontFamily: 'Newsreader,serif', fontStyle: 'italic', fontSize: 'clamp(13px,1.2vw,15px)', color: 'rgba(239,236,229,.6)', maxWidth: 640, margin: '0 0 32px' }}>
+            <p style={{ fontFamily: 'Newsreader,serif', fontStyle: 'italic', fontSize: 'clamp(13px,1.2vw,16px)', color: 'rgba(239,236,229,.6)', maxWidth: 640, margin: '0 0 clamp(24px,4vh,48px)' }}>
               CS &amp; AI/ML · University of Connecticut · Class of &apos;28
             </p>
 
             {/* Résumé */}
-            <div style={{ marginBottom: 20 }}>
+            <div style={{ marginBottom: 'clamp(16px,2.6vh,28px)' }}>
               <BracketFrame className="inline-flex">
                 <div style={{ display: 'inline-flex', alignItems: 'center', gap: 10, padding: '10px 16px', background: 'rgba(22,21,28,.4)' }}>
                   <span style={{ fontFamily: '"JetBrains Mono",monospace', fontSize: 9, letterSpacing: '.2em', textTransform: 'uppercase', color: 'rgba(168,85,247,.7)', marginRight: 4 }}>// résumé</span>
@@ -148,7 +148,7 @@ export default function Hero() {
             </div>
 
             {/* CTAs */}
-            <div style={{ display: 'flex', flexWrap: 'wrap', gap: 12, marginBottom: 32 }}>
+            <div style={{ display: 'flex', flexWrap: 'wrap', gap: 12, marginBottom: 'clamp(24px,4vh,48px)' }}>
               {[
                 { href: '#projects', label: 'view work →', primary: true },
                 { href: '#contact',  label: "let's talk →", outline: true },
@@ -182,14 +182,14 @@ export default function Hero() {
           </div>
 
           {/* Right column: status panel */}
-          <aside style={{ flex: '0 1 420px', minWidth: 320 }}>
+          <aside style={{ flex: '0 1 460px', minWidth: 320 }}>
             <BracketFrame size={10}>
-              <div style={{ background: '#16171a', border: '1px solid rgba(239,236,229,.08)', padding: 28 }}>
-                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 20 }}>
+              <div style={{ background: '#16171a', border: '1px solid rgba(239,236,229,.08)', padding: 'clamp(24px,3vw,40px)' }}>
+                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 'clamp(18px,3vh,32px)' }}>
                   <span style={{ fontFamily: '"JetBrains Mono",monospace', fontSize: 10, letterSpacing: '.2em', textTransform: 'uppercase', color: 'rgba(168,85,247,.85)' }}>// current_status</span>
                   <span style={{ fontFamily: '"JetBrains Mono",monospace', fontSize: 10, color: 'rgba(239,236,229,.35)' }}>v.06.29.26</span>
                 </div>
-                <div style={{ display: 'flex', flexDirection: 'column', gap: 10, fontFamily: '"JetBrains Mono",monospace', fontSize: 12 }}>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: 'clamp(10px,1.6vh,18px)', fontFamily: '"JetBrains Mono",monospace', fontSize: 13 }}>
                   {[
                     ['clock', <StatusClock key="c" />],
                     ['loc', <span key="l" style={{ color: '#efece5' }}>hartford, ct</span>],
@@ -199,7 +199,7 @@ export default function Hero() {
                     ['uplink', <span key="u" style={{ display: 'flex', alignItems: 'center', gap: 6, color: '#a855f7' }}><PulseDot size={6} />stable</span>],
                     ['now', <span key="n" style={{ color: '#a855f7' }}>agents · rabbit holes</span>],
                   ].map(([key, val]) => (
-                    <div key={key} style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', borderBottom: '1px solid rgba(239,236,229,.05)', paddingBottom: 6 }}>
+                    <div key={key} style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', borderBottom: '1px solid rgba(239,236,229,.05)', paddingBottom: 'clamp(6px,1vh,10px)' }}>
                       <span style={{ color: 'rgba(239,236,229,.4)', textTransform: 'uppercase', letterSpacing: '.15em', fontSize: 10 }}>{key}</span>
                       {val}
                     </div>
