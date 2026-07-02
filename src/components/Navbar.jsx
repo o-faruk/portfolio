@@ -11,7 +11,7 @@ export default function Navbar() {
 
   return (
     <header style={{ position: 'fixed', top: 0, left: 0, right: 0, zIndex: 50, background: 'rgba(14,13,20,.72)', borderBottom: '1px solid rgba(168,85,247,.16)', backdropFilter: 'blur(8px)' }}>
-      <nav style={{ maxWidth: 1280, margin: '0 auto', padding: '14px 24px', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+      <nav style={{ maxWidth: 'min(94vw,1800px)', margin: '0 auto', padding: '14px 24px', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
         <a href="#hero" style={{ display: 'flex', alignItems: 'center', gap: 12, fontFamily: '"JetBrains Mono",monospace', fontSize: 12, letterSpacing: '.22em', textTransform: 'uppercase', color: 'inherit', textDecoration: 'none' }}>
           <span className="relative inline-flex w-[8px] h-[8px]">
             <span className="animate-ping-ring absolute inset-0 bg-signal opacity-70" style={{ borderRadius: 0 }} />

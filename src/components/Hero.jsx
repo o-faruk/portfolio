@@ -69,7 +69,7 @@ export default function Hero() {
       {/* diagonal rule */}
       <div style={{ position: 'absolute', top: '26%', left: '-50%', width: '220%', height: 1, background: 'linear-gradient(90deg,transparent,rgba(168,85,247,.5) 40%,rgba(168,85,247,.5) 60%,transparent)', transform: 'rotate(-23deg)', opacity: .22, pointerEvents: 'none' }} />
 
-      <div style={{ position: 'relative', zIndex: 10, maxWidth: 1280, margin: '0 auto', padding: 'clamp(80px,14vh,180px) 24px clamp(60px,10vh,120px)', width: '100%' }}>
+      <div style={{ position: 'relative', zIndex: 10, maxWidth: 'min(94vw,1800px)', margin: '0 auto', padding: 'clamp(80px,14vh,180px) 24px clamp(60px,10vh,120px)', width: '100%' }}>
       {/* mission briefing badge */}
         <div style={{ marginBottom: 'clamp(13px,2vh,32px)' }}>
           <BracketFrame className="inline-flex">

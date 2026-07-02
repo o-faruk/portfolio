@@ -2,7 +2,7 @@ export default function Footer() {
   return (
     <footer style={{ position: 'relative', borderTop: '1px solid rgba(168,85,247,.15)' }}>
       <div style={{ position: 'absolute', insetInline: 0, top: 0, height: 1, background: 'linear-gradient(90deg,transparent,rgba(168,85,247,.45) 8%,rgba(168,85,247,.45) 92%,transparent)' }} />
-      <div style={{ maxWidth: 1280, margin: '0 auto', padding: '32px 24px', display: 'flex', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'space-between', gap: 24 }}>
+      <div style={{ maxWidth: 'min(94vw,1800px)', margin: '0 auto', padding: '32px 24px', display: 'flex', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'space-between', gap: 24 }}>
         <div style={{ fontFamily: '"JetBrains Mono",monospace', fontSize: 11, letterSpacing: '.22em', textTransform: 'uppercase', color: 'rgba(239,236,229,.5)' }}>
           <div style={{ color: 'rgba(239,236,229,.7)' }}>omar_faruk.system</div>
           <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginTop: 4 }}>

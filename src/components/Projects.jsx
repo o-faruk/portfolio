@@ -230,7 +230,7 @@ export default function Projects() {
         {modal !== null && <ProjectModal key={modal} project={PROJECTS[modal - 1]} onClose={() => setModal(null)} />}
       </AnimatePresence>
       
-      <div style={{ maxWidth: 1280, margin: '0 auto', padding: '112px 24px 48px' }}>
+      <div style={{ maxWidth: 'min(94vw,1800px)', margin: '0 auto', padding: '112px 24px 48px' }}>
         <div style={{ display: 'flex', alignItems: 'flex-end', justifyContent: 'space-between', gap: 32, borderBottom: '1px solid rgba(168,85,247,.15)', paddingBottom: 24 }}>
           <div style={{ display: 'flex', alignItems: 'baseline', gap: 24 }}>
             <span style={{ fontFamily: 'Fraunces,serif', fontStyle: 'italic', color: '#a855f7', fontSize: 'clamp(28px,4vw,40px)', lineHeight: 1 }}>II.</span>
@@ -289,7 +289,7 @@ export default function Projects() {
               <span style={{ fontFamily: '"JetBrains Mono",monospace', color: 'rgba(239,236,229,.15)', fontSize: 24, letterSpacing: '.2em', textTransform: 'uppercase', marginBottom: 48 }}>/ {String(PROJECTS.length).padStart(2,'0')}</span>
             </motion.div>
           </div>
-          <div style={{ position: 'relative', width: '100%', maxWidth: 1280, margin: '0 auto', zIndex: 2, padding: '0 64px' }}>
+          <div style={{ position: 'relative', width: '100%', maxWidth: 'min(94vw,1800px)', margin: '0 auto', zIndex: 2, padding: '0 64px' }}>
             <div style={{ display: 'grid', gridTemplateColumns: '1.4fr 1fr', gap: 48, alignItems: 'center' }}>
               <motion.div key={`preview-${active}`} initial={{ opacity: 0, x: -16 }} animate={{ opacity: 1, x: 0 }}
                 onClick={() => setModal(active + 1)} role="button" tabIndex={0} onKeyDown={e => e.key==='Enter'&&setModal(active+1)}
